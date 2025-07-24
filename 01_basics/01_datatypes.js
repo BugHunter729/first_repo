@@ -21,5 +21,5 @@ let state = null
 
 console.log(typeof "hitesh")
 console.log(typeof null) // it is an object
-console.log(typeof undefined) // output :- undefined
+console.log(typeof undefined) // output :- undefined 
 
