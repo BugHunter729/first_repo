@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM LEARNING</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color:white;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div >
+        <h1 id = "title" class="heading">DOM learning on chai and code<span style="display: none">test test</span></h1>
+        <h2>hello bro</h2>
+        <h2>hello kavya</h2>
+            <h1>hello kavya</h1>
+        <p class="hello">hello world</p>
+        <ul>
+            <li class="list-item">three</li>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+        </ul>
+    </div>
+    
+</body>
+</html>
+
+<!-- The Document Object Model (DOM) is a structured way for web browsers to represent and interact with HTML pages, treating every part of a page (like tags, text, and attributes) as objects.(It's how JavaScript “talks” to HTML.)
+The DOM is explained as a model that represents the structure of an HTML document as a tree of objects (head, body, p, img ). Every element, attribute, and text is considered a "node" in this tree
+
+    Example HTML:
+    <html>
+    <body>
+        <h1>Hello</h1>
+        <p>Paragraph</p>
+    </body>
+    </html>
+
+    Corresponding DOM Tree:
+
+    Document
+    └── html
+        └── body
+            ├── h1
+            │    └── "Hello"
+            └── p
+                └── "Paragraph"
+
+# Window and Document :-
+-The browser creates a window object that represents the browser tab or window.
+-window contains many properties and methods — one of them is document.
+-The document object represents the webpage and provides access to:
+    HTML elements.
+    Document structure.
+    Methods for DOM manipulation.
+
+    console.log(window.document); // Outputs the entire HTML document and methods for manipulation
+    console.log(document); //outputs entire document
+    console.dir(windows); //Outputs the entire HTML document and methods for manipulation
+
+
+!! Collections like HTMLCollection or NodeList are used to handle groups of elements, but they differ from standard arrays. -->
+
+<!-- 
+1:27 -  how to add content
+difference between  textContent and innerText
+textContent => to show all the texts even if it is hidden due todisplay property or  css property
+innerText => to show what is visible in on the page
+innerHTML => to show  html values(tag, attribute, text)
+
+16:20 -  query selector
+only returns the first element that matches the specified selectors.
+
+23:15 - query selector all
+returns all node list that matches the selectors -->
