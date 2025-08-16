@@ -81,3 +81,15 @@ form.addEventListener('submit',function(e){
   }
 })
 ```
+
+## Project 3
+``` javascript
+const t =  document.querySelector('#clock')
+// const clock = document.getElementById('clock')
+
+setInterval(function(){
+  let date = new Date();
+// console.log(date.toLocaleTimeString())
+t.innerHTML = date.toLocaleTimeString();
+},1000)
+```
