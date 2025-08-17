@@ -93,7 +93,7 @@ setInterval(function(){
 t.innerHTML = date.toLocaleTimeString();
 },1000)
 ```
-## project 3
+## project 4
 ``` javascript 
 let random = parseInt(Math.random()*100 +1)
 
