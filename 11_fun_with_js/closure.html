@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    <button id="orange" >Orange</button>
+    <button id="green">green</button>
+    <script>
+    //      function init() {
+    //     let name = "Mozilla"; 
+    //     function displayName() {
+    //         console.log(name); 
+    //     }
+    //     displayName();
+    // }
+    // init();
+    // function outer(){
+    //     let username = "kavya"
+    //     // console.log(secret)
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner",username);
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo",username)
+    //         console.log(secret)
+    //     }
+    //     inner();
+    //     innerTwo();
+        
+    // }
+    // outer()
+    // console.log("too outer",username);
+
+
+
+
+    // closure
+    
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+   const myFunc = makeFunc();
+   myFunc();
+// document.getElementById("orange").onclick = function (){
+//     document.body.style.backgroundColor = "orange"
+// }
+// document.getElementById("green").onclick = function (){
+//     document.body.style.backgroundColor = "green"
+// }
+function clickHandler(color){
+    // document.body.style.backgroundColor = `${color}` not works
+     return function (){
+        document.body.style.backgroundColor = `${color}`
+    }
+}
+document.getElementById('orange').onclick = clickHandler("orange");
+document.getElementById('green').onclick = clickHandler("green");
+    </script>
+</body>
+</html>
+<!-- The onclick here requires a reference of a function so that it can call it when the click event occurs on corresponding button, we always pass reference in this type of situation to prevent the function to get executed immediately. 
+But the problem is we can't just pass the reference of the function because as we know it requires the color in the form of parameter and we are noy storing the reference in variable like structure such as let refHolder = clickHandler; so we can't call the refHolder later with the color parameter later in code such as refHolder('blue'). 
+In reality, we are giving the reference to onclick which doesn't have an in built functionality or human intelligence to call this clickHandler with argument based on the button. 
+So now we actually have a tiny war between onclick() demanding a reference and clickHandler(color) which demands to be called with a parameter only otherwise error. 
+
+Now in order to fullfill the demand of bith entities, we can we will indeed call the clickHandler() with color parameter passed ( demand fulfilled ) but at the same time we will do something that a reference is given to onClick function ( which it strictly demands ), we will return reference of an inner function which does the main work or logic( demand fulfilled ) ( Very important thing to note here is this could not have been achieved without the feature of lexical scoping ) -->
