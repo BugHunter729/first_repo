@@ -188,6 +188,55 @@ function endGame (){
 }
 ```
 
+## project 5 
+``` javascript
+const insert = document.getElementById('insert')
+window.addEventListener('keydown',function(e){
+  insert.innerHTML = `<div class='color'>
+     <table>
+     <tr>
+     <th>Key</th>
+     <th>KeyCode</th>
+     <th>Code</th>
+     </tr>
+     <tr>
+     <td>${e.key === ' '?"Space":e.key}</td>
+     <td>${e.keyCode}</td>
+     <td>${e.code}</td>
+     </tr>
+     </table>
+     </div>`
+})
+```
+
+## project 6
+``` javascript
+const start = document.querySelector('#start')
+const stop = document.querySelector('#stop')
+const randomCOlor = function(){
+  const hex = '0123456789ABCDEF'
+  let color = '#'
+  for(let i =0;i<6;i++){
+    color+= hex[Math.floor(Math.random()*16)]
+  }
+  return color;
+}
+// console.log(randomCOlor())
+let change ;
+start.addEventListener('click',function(){
+  if(!change){
+  change = setInterval(()=>{
+    // console.log("Interval running:", change, "at", Date.now());
+    document.body.style.backgroundColor = randomCOlor();
+  },2000)
+}
+})
+stop.addEventListener('click',function(){
+  clearInterval(change)
+  change = null;
+})
+```
+
 
 
 
